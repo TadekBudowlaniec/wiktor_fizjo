@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pine-950: #0c1a15;
+  --color-pine-900: #12261e;
+  --color-pine-800: #1a372b;
+  --color-pine-700: #24503e;
+  --color-pine-600: #2f6a52;
+  --color-pine-300: #a9c4b5;
+  --color-pine-100: #e0eae3;
+  --color-cream: #f6f2e9;
+  --color-paper: #fbf9f4;
+  --color-sand: #e8e0d0;
+  --color-ink: #16201b;
+  --color-muted: #55615a;
+  --color-amber: #e3a857;
+  --color-amber-light: #efbd78;
+  --color-amber-deep: #9a5f18;
+}
+
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-pine-950);
+}
+
+/* Wejście sekcji przy przewijaniu: czysty CSS (scroll-driven animations) */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
