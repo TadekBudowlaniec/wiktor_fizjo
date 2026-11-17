@@ -7,7 +7,7 @@ export const site = {
   name: "Wiktor",
   brand: "Wiktor · Fizjoterapia",
   role: "Fizjoterapeuta",
-  url: "https://example.com", // TODO: docelowa domena
+  url: "https://domenaplusy.pl",
   phone: "+48 000 000 000", // TODO: numer telefonu
   email: "kontakt@example.com", // TODO: adres e-mail (trafiają tu zapytania z formularza)
   city: "", // TODO: np. "Warszawa"
@@ -33,50 +33,70 @@ export const services: Service[] = [
   {
     id: "akupunktura",
     title: "Akupunktura",
-    lead: "Precyzyjna praca igłą tam, gdzie napięcie siedzi najgłębiej.",
+    lead: "Metoda medycyny tradycyjnej i komplementarnej.",
     description:
-      "Cienkie, jednorazowe igły wprowadzane w dokładnie dobrane punkty. Pomagają rozluźnić nadmiernie napięte mięśnie i zmniejszyć dolegliwości bólowe, także tam, gdzie sam masaż nie wystarcza.",
-    goodFor: ["Ból karku i barków", "Napięte, zbite mięśnie", "Przeciążenia"],
+      "Cienkie, jednorazowe, sterylne igły wprowadzane w dobrane punkty. Akupunkturę oferuję jako metodę medycyny tradycyjnej i komplementarnej. Może uzupełniać dbanie o zdrowie, ale nie zastępuje leczenia ani konsultacji lekarskiej.",
+    goodFor: ["Medycyna tradycyjna", "Metoda komplementarna", "Jednorazowe igły"],
     duration: "",
     price: "",
   },
   {
-    id: "masaz-przeciwbolowy",
-    title: "Masaż przeciwbólowy",
-    lead: "Celowana praca na tkankach, które odpowiadają za ból.",
+    id: "masaz-klasyczny",
+    title: "Masaż klasyczny relaksacyjny",
+    lead: "Klasyczny masaż całego ciała w spokojnym tempie.",
     description:
-      "Skupiam się na źródle dolegliwości, a nie tylko na miejscu, które boli. Siłę i tempo dobieram do tego, co czujesz w trakcie zabiegu.",
-    goodFor: ["Ból pleców", "Ból karku", "Bóle napięciowe"],
+      "Pełny masaż klasyczny, przy którym możesz się wyciszyć i odpocząć po wymagającym tygodniu. Bez pośpiechu, z uciskiem dopasowanym do Twoich odczuć.",
+    goodFor: ["Całe ciało", "Relaks", "Wellness"],
     duration: "",
     price: "",
   },
   {
-    id: "masaz-mobilnosc",
-    title: "Masaż poprawiający mobilność",
-    lead: "Masaż, rozciąganie i mobilizacje w jednym zabiegu.",
+    id: "masaz-plecow",
+    title: "Masaż pleców",
+    lead: "Relaksacyjny masaż całego grzbietu.",
     description:
-      "Dla osób, które czują sztywność po godzinach przy biurku albo chcą swobodniej poruszać się na treningu. Pracujemy nad zakresem ruchu bioder, barków i kręgosłupa.",
-    goodFor: ["Sztywność po siedzeniu", "Sportowcy", "Ograniczony zakres ruchu"],
+      "Rozluźniający masaż pleców, karku i barków. Dobry wybór, gdy masz mniej czasu, a chcesz chwili odprężenia.",
+    goodFor: ["Grzbiet", "Relaks", "Wellness"],
     duration: "",
     price: "",
   },
   {
-    id: "masaz-relaksacyjny",
-    title: "Masaż relaksacyjny",
-    lead: "Spokojny, płynny masaż, przy którym naprawdę odpoczywasz.",
+    id: "masaz-konczyn-gornych",
+    title: "Masaż kończyn górnych",
+    lead: "Odprężający masaż rąk i ramion.",
     description:
-      "Wycisza, rozluźnia i pozwala odpuścić napięcie po wymagającym tygodniu. Bez pośpiechu i bez mocnego ucisku.",
-    goodFor: ["Stres i zmęczenie", "Problemy z wyciszeniem", "Chwila dla siebie"],
+      "Spokojny masaż dłoni, przedramion i ramion. Przyjemna chwila dla rąk, które cały dzień pracują przy komputerze lub fizycznie.",
+    goodFor: ["Ręce", "Relaks", "Wellness"],
     duration: "",
     price: "",
   },
   {
-    id: "masaz-tradycyjny",
-    title: "Masaż tradycyjny",
-    lead: "Klasyczny masaż całego ciała lub wybranej okolicy.",
+    id: "masaz-konczyn-dolnych",
+    title: "Masaż kończyn dolnych",
+    lead: "Relaksacyjny masaż nóg i stóp.",
     description:
-      "Sprawdzona, uniwersalna forma pracy z ciałem. Dobry wybór na początek, jeśli nie masz pewności, czego dokładnie potrzebujesz.",
-    goodFor: ["Ogólne napięcie", "Regeneracja", "Pierwsza wizyta"],
+      "Rozluźniający masaż stóp, łydek i ud. Daje uczucie lekkości po długim dniu na nogach.",
+    goodFor: ["Nogi", "Relaks", "Wellness"],
+    duration: "",
+    price: "",
+  },
+  {
+    id: "masaz-brzucha",
+    title: "Masaż brzucha",
+    lead: "Delikatny masaż relaksacyjny okolicy brzucha.",
+    description:
+      "Łagodne, płynne ruchy wykonywane w spokojnym rytmie. Sprzyja wyciszeniu i odprężeniu.",
+    goodFor: ["Brzuch", "Relaks", "Wellness"],
+    duration: "",
+    price: "",
+  },
+  {
+    id: "masaz-klatki-piersiowej",
+    title: "Masaż klatki piersiowej",
+    lead: "Relaksacyjny masaż w zakresie masażu klasycznego.",
+    description:
+      "Masaż klatki piersiowej wykonywany w zakresie techniki masażu klasycznego. Można go połączyć z masażem pleców lub całego ciała.",
+    goodFor: ["Klatka piersiowa", "Relaks", "Wellness"],
     duration: "",
     price: "",
   },

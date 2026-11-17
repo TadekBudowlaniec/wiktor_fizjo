@@ -284,10 +284,10 @@ export default function Home() {
             <div className="reveal max-w-2xl">
               <Eyebrow>Oferta</Eyebrow>
               <h2 className="font-display text-4xl leading-tight tracking-tight text-pine-900 text-balance sm:text-5xl">
-                Pięć sposobów, żeby ciało znów pracowało z Tobą
+                Akupunktura i masaże relaksacyjne
               </h2>
               <p className="mt-5 text-lg text-muted text-pretty">
-                Od precyzyjnej pracy igłą po spokojny masaż relaksacyjny. Metody można łączyć w trakcie jednej wizyty.
+                Akupunktura jako metoda medycyny tradycyjnej i komplementarnej oraz masaże relaksacyjne w stylu wellness. Metody można łączyć w trakcie jednej wizyty.
               </p>
             </div>
 
@@ -325,11 +325,15 @@ export default function Home() {
               </div>
             </article>
 
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {rest.map((s, i) => (
                 <ServiceCard key={s.id} s={s} index={i + 1} />
               ))}
             </div>
+
+            <p className="reveal mt-8 max-w-3xl rounded-2xl border border-sand bg-cream px-6 py-4 text-sm text-muted text-pretty">
+              Masaże w ofercie mają charakter relaksacyjny i wellness. Nie są zabiegami leczniczymi. Akupunktura jest metodą medycyny tradycyjnej i komplementarnej i nie zastępuje leczenia ani porady lekarza.
+            </p>
           </div>
         </section>
 
