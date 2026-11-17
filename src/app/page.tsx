@@ -43,7 +43,7 @@ const moments = [
 const steps = [
   {
     title: "Krótka rozmowa",
-    text: "Pytam, czego oczekujesz od masażu, jaki ucisk lubisz i czy nie ma przeciwwskazań. Przy dolegliwościach zdrowotnych odsyłam do lekarza lub fizjoterapeuty.",
+    text: "Pytam, czego oczekujesz od masażu, jaki ucisk lubisz i czy nie ma przeciwwskazań. Przy dolegliwościach zdrowotnych odsyłam do lekarza.",
   },
   {
     title: "Masaż dopasowany do Ciebie",

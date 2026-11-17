@@ -10,7 +10,7 @@ export const site = {
   legalName: "Wiktor Krywczuk",
   nip: "", // TODO: NIP, gdy zarejestrujesz firmę (przy działalności nierejestrowanej zostaw puste)
   url: "https://domenaplusy.pl",
-  phone: "+48 000 000 000", // TODO: numer telefonu
+  phone: "+48 535 606 050",
   email: "wiktorkrywczuk@gmail.com",
   city: "Lublin",
   address: "", // TODO: np. "ul. Leśna 12/3, 00-001 Warszawa"
@@ -23,7 +23,7 @@ export const site = {
 
 /** Zastrzeżenie wyświetlane w ofercie, w stopce i w polityce prywatności. */
 export const disclaimer =
-  "Masaż nie jest zabiegiem leczniczym. Przy dolegliwościach skonsultuj się z lekarzem lub fizjoterapeutą.";
+  "Masaż nie jest zabiegiem leczniczym. Przy dolegliwościach skonsultuj się z lekarzem.";
 
 export type Service = {
   id: string;
@@ -114,7 +114,7 @@ export const reviews: { author: string; text: string }[] = [];
 export const faq = [
   {
     q: "Czy masaż to zabieg leczniczy?",
-    a: "Nie. Masaże w mojej ofercie mają charakter relaksacyjny i wellness. Przy dolegliwościach skonsultuj się z lekarzem lub fizjoterapeutą.",
+    a: "Nie. Masaże w mojej ofercie mają charakter relaksacyjny i wellness. Przy dolegliwościach skonsultuj się z lekarzem.",
   },
   {
     q: "Nie wiem, który masaż wybrać. Co wtedy?",
