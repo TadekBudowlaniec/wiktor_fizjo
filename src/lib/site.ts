@@ -7,12 +7,12 @@ export const site = {
   name: "Wiktor",
   brand: "Wiktor · Masaż",
   role: "Masaż klasyczny i relaksacyjny",
-  legalName: "", // TODO: imię i nazwisko (administrator danych, widoczne w stopce i polityce prywatności)
+  legalName: "Wiktor Krywczuk",
   nip: "", // TODO: NIP, gdy zarejestrujesz firmę (przy działalności nierejestrowanej zostaw puste)
   url: "https://domenaplusy.pl",
   phone: "+48 000 000 000", // TODO: numer telefonu
-  email: "kontakt@example.com", // TODO: adres e-mail (trafiają tu zapytania z formularza)
-  city: "", // TODO: np. "Warszawa"
+  email: "wiktorkrywczuk@gmail.com",
+  city: "Lublin",
   address: "", // TODO: np. "ul. Leśna 12/3, 00-001 Warszawa"
   mapsUrl: "", // TODO: link do Map Google
   hours: [] as { days: string; time: string }[], // TODO: np. { days: "Pon.–Pt.", time: "9:00–19:00" }

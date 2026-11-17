@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
         <p>
           Administratorem Twoich danych osobowych jest {admin}
           {site.nip && `, NIP ${site.nip}`}
-          {site.address && `, ${site.address}`}. W sprawach danych osobowych możesz się kontaktować:
+          {site.address ? `, ${site.address}` : site.city && `, ${site.city}`}. W sprawach danych osobowych możesz się kontaktować:
         </p>
         <ul>
           <li>
