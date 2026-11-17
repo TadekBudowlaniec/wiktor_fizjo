@@ -1,10 +1,10 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import akupunktura from "@/assets/akupunktura.jpg";
+import Link from "next/link";
 import mobilizacja from "@/assets/mobilizacja.jpg";
 import terapia from "@/assets/terapia.jpg";
 import { ContactForm } from "@/components/ContactForm";
-import { faq, reviews, services, site, telHref, type Service } from "@/lib/site";
+import { disclaimer, faq, reviews, services, site, telHref, type Service } from "@/lib/site";
 
 const nav = [
   { href: "#oferta", label: "Oferta" },
@@ -13,53 +13,53 @@ const nav = [
   { href: "#faq", label: "Pytania" },
 ];
 
-const problems = [
+const moments = [
   {
-    title: "Ból pleców i karku",
-    text: "Ciągnie, kłuje albo po prostu nie daje o sobie zapomnieć.",
+    title: "Napięte barki i kark",
+    text: "Barki pod uszami i uczucie, że całe napięcie dnia siedzi w karku.",
   },
   {
-    title: "Sztywność po siedzeniu",
-    text: "Osiem godzin przy biurku i ciało, które nie chce się wyprostować.",
+    title: "Długie godziny przy biurku",
+    text: "Osiem godzin na krześle i ciało, które prosi o chwilę ulgi.",
   },
   {
-    title: "Napięte barki i szyja",
-    text: "Barki pod uszami, napięcie, które wraca mimo rozciągania.",
+    title: "Zmęczenie po treningu",
+    text: "Mięśnie, które po wysiłku chcą się po prostu rozluźnić.",
   },
   {
-    title: "Przeciążenia po treningu",
-    text: "Mięśnie, które nie regenerują się tak, jak powinny.",
+    title: "Długi dzień na nogach",
+    text: "Ciężkie nogi i stopy po całym dniu w ruchu.",
   },
   {
-    title: "Ograniczony zakres ruchu",
-    text: "Biodro, bark lub kręgosłup, które blokują się w codziennych ruchach.",
+    title: "Stres i przemęczenie",
+    text: "Zmęczenie, którego nie da się już przespać.",
   },
   {
-    title: "Stres, który czuć w ciele",
-    text: "Zmęczenie i napięcie, których nie da się już przespać.",
+    title: "Chwila tylko dla siebie",
+    text: "Godzina spokoju, bez telefonu i bez pośpiechu.",
   },
 ];
 
 const steps = [
   {
-    title: "Rozmowa i ocena",
-    text: "Pytam, co Ci dolega, od kiedy i w jakich sytuacjach. Sprawdzam ruch i napięcie tkanek, żeby pracować z przyczyną, a nie tylko z objawem.",
+    title: "Krótka rozmowa",
+    text: "Pytam, czego oczekujesz od masażu, jaki ucisk lubisz i czy nie ma przeciwwskazań. Przy dolegliwościach zdrowotnych odsyłam do lekarza lub fizjoterapeuty.",
   },
   {
-    title: "Terapia dobrana do Ciebie",
-    text: "Akupunktura, masaż albo połączenie obu metod. Na bieżąco mówię, co robię i po co, a intensywność dopasowuję do Twoich odczuć.",
+    title: "Masaż dopasowany do Ciebie",
+    text: "Wybierasz zakres: całe ciało albo wybraną partię. Tempo i siłę ucisku dopasowuję na bieżąco do Twoich odczuć.",
   },
   {
-    title: "Jasne zalecenia",
-    text: "Wychodzisz z prostymi wskazówkami na co dzień i uczciwą informacją, czy i kiedy warto wrócić.",
+    title: "Czas na odpoczynek",
+    text: "Po masażu masz chwilę, żeby spokojnie wstać i wrócić do swojego dnia rozluźniony.",
   },
 ];
 
 const principles = [
-  "Cała wizyta jest tylko dla Ciebie. Jeden pacjent, pełna uwaga.",
-  "Tłumaczę, co robię i dlaczego. Bez żargonu.",
-  "Jednorazowe, sterylne igły i czysty, spokojny gabinet.",
-  "Uczciwie mówię, czego możesz się spodziewać po terapii.",
+  "Cała wizyta jest tylko dla Ciebie. Jeden klient, pełna uwaga.",
+  "Pytam o komfort i dopasowuję ucisk do Twoich odczuć.",
+  "Czysty, spokojny gabinet i świeże podkłady dla każdego klienta.",
+  "Ukończony kurs masażu klasycznego I stopnia.",
 ];
 
 const btnPrimary =
@@ -125,7 +125,7 @@ function ServiceCard({ s, index }: { s: Service; index: number }) {
       </ul>
       <div className="mt-auto flex items-center justify-between gap-4 pt-7">
         <a href="#kontakt" className="inline-flex items-center gap-2 font-semibold text-pine-800 underline-offset-4 hover:underline">
-          Umów ten zabieg <Arrow />
+          Umów ten masaż <Arrow />
         </a>
         <ServiceMeta s={s} />
       </div>
@@ -139,12 +139,11 @@ export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": "HealthAndBeautyBusiness",
     name: site.brand,
     url: site.url,
     telephone: site.phone,
     email: site.email,
-    medicalSpecialty: "Physiotherapy",
     ...(site.address && { address: site.address }),
     ...(site.city && { areaServed: site.city }),
     makesOffer: services.map((s) => ({
@@ -165,7 +164,7 @@ export default function Home() {
         <div className="mx-auto flex h-18 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
           <a href="#top" className="flex items-baseline gap-2 font-display text-xl tracking-tight">
             {site.name}
-            <span className="text-sm font-sans font-medium uppercase tracking-[0.16em] text-pine-300">Fizjoterapia</span>
+            <span className="text-sm font-sans font-medium uppercase tracking-[0.16em] text-pine-300">Masaż</span>
           </a>
           <nav aria-label="Główna" className="hidden items-center gap-8 text-[0.95rem] font-medium text-cream/80 md:flex">
             {nav.map((n) => (
@@ -198,10 +197,10 @@ export default function Home() {
                 {site.city && ` · ${site.city}`}
               </p>
               <h1 className="rise font-display text-[2.75rem] leading-[1.04] tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]" style={{ "--i": 1 } as React.CSSProperties}>
-                Mniej bólu. <em className="text-amber">Więcej swobody</em> w ruchu.
+                Mniej napięcia. <em className="text-amber">Więcej spokoju</em>.
               </h1>
               <p className="rise mt-6 max-w-xl text-lg leading-relaxed text-cream/75 text-pretty sm:text-xl" style={{ "--i": 2 } as React.CSSProperties}>
-                Akupunktura i masaż dobrane do Twojego ciała. Przychodzisz z bólem, napięciem albo sztywnością, a ja szukam przyczyny i pracuję dokładnie tam, gdzie trzeba.
+                Masaż klasyczny i relaksacyjny dopasowany do Ciebie. Przychodzisz zmęczony i spięty, wychodzisz rozluźniony.
               </p>
               <div className="rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ "--i": 3 } as React.CSSProperties}>
                 <a href={bookHref} className={btnPrimary}>
@@ -212,7 +211,7 @@ export default function Home() {
                 </a>
               </div>
               <ul className="rise mt-10 grid gap-3 text-[0.95rem] text-cream/80 sm:grid-cols-3" style={{ "--i": 4 } as React.CSSProperties}>
-                {["Terapia 1 na 1", "Jednorazowe, sterylne igły", "Bez skierowania"].map((t) => (
+                {["Masaż 1 na 1", "Spokojny, czysty gabinet", "Ucisk dopasowany do Ciebie"].map((t) => (
                   <li key={t} className="flex items-start gap-2">
                     <Check /> {t}
                   </li>
@@ -224,7 +223,7 @@ export default function Home() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] ring-1 ring-white/10">
                 <Image
                   src={terapia}
-                  alt={`${site.name}, fizjoterapeuta, podczas pracy z pacjentem w gabinecie`}
+                  alt={`${site.name} podczas pracy z klientem w gabinecie`}
                   fill
                   preload
                   placeholder="blur"
@@ -233,17 +232,8 @@ export default function Home() {
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-pine-950/55 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-8 -left-3 w-32 overflow-hidden rounded-2xl border-4 border-pine-950 shadow-2xl sm:-left-8 sm:w-40">
-                <Image
-                  src={akupunktura}
-                  alt="Zabieg akupunktury w okolicy barku"
-                  placeholder="blur"
-                  sizes="160px"
-                  className="aspect-[3/4] object-cover"
-                />
-              </div>
               <div className="absolute -right-2 bottom-8 max-w-[13rem] rounded-2xl border border-white/15 bg-pine-900/80 p-4 shadow-2xl backdrop-blur-md sm:-right-5">
-                <p className="font-display text-lg leading-tight">Jedna wizyta, jeden pacjent</p>
+                <p className="font-display text-lg leading-tight">Jedna wizyta, jeden klient</p>
                 <p className="mt-1 text-sm text-cream/70">Cały czas w gabinecie jest tylko dla Ciebie.</p>
               </div>
             </div>
@@ -254,13 +244,13 @@ export default function Home() {
         <section className="bg-cream py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <div className="reveal max-w-2xl">
-              <Eyebrow>Z czym pomagam</Eyebrow>
+              <Eyebrow>Kiedy warto przyjść</Eyebrow>
               <h2 className="font-display text-4xl leading-tight tracking-tight text-pine-900 text-balance sm:text-5xl">
-                Brzmi znajomo? Nie musisz się do tego przyzwyczajać.
+                Brzmi znajomo? Czas na chwilę odprężenia.
               </h2>
             </div>
             <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-sand bg-sand sm:grid-cols-2 lg:grid-cols-3">
-              {problems.map((p) => (
+              {moments.map((p) => (
                 <li key={p.title} className="reveal bg-paper p-7 sm:p-8">
                   <h3 className="font-display text-xl text-pine-900">{p.title}</h3>
                   <p className="mt-2 text-muted text-pretty">{p.text}</p>
@@ -269,7 +259,7 @@ export default function Home() {
             </ul>
             <div className="reveal mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-xl text-lg text-pine-800">
-                Nie wiesz, który zabieg będzie dla Ciebie? Opisz problem, a doradzę przed wizytą.
+                Nie wiesz, który masaż wybrać? Napisz, czego potrzebujesz, a doradzę przed wizytą.
               </p>
               <a href="#kontakt" className="group inline-flex min-h-13 items-center gap-2 rounded-full bg-pine-900 px-7 font-semibold text-cream transition hover:bg-pine-800">
                 Zapytaj o termin <Arrow />
@@ -284,27 +274,18 @@ export default function Home() {
             <div className="reveal max-w-2xl">
               <Eyebrow>Oferta</Eyebrow>
               <h2 className="font-display text-4xl leading-tight tracking-tight text-pine-900 text-balance sm:text-5xl">
-                Akupunktura i masaże relaksacyjne
+                Masaże relaksacyjne dla całego ciała
               </h2>
               <p className="mt-5 text-lg text-muted text-pretty">
-                Akupunktura jako metoda medycyny tradycyjnej i komplementarnej oraz masaże relaksacyjne w stylu wellness. Metody można łączyć w trakcie jednej wizyty.
+                Masaż całego ciała albo wybranej partii. Wszystkie masaże mają charakter relaksacyjny i wellness.
               </p>
             </div>
 
-            <article className="reveal mt-12 grid overflow-hidden rounded-3xl bg-pine-900 text-cream md:grid-cols-[0.8fr_1.2fr]">
-              <div className="relative min-h-72 md:min-h-full">
-                <Image
-                  src={akupunktura}
-                  alt="Fizjoterapeuta w rękawiczkach wprowadza igłę do akupunktury w okolicy barku pacjentki"
-                  fill
-                  placeholder="blur"
-                  sizes="(min-width: 768px) 440px, 100vw"
-                  className="object-cover object-[50%_40%]"
-                />
-              </div>
-              <div className="flex flex-col p-8 sm:p-12">
+            <article className="reveal relative isolate mt-12 overflow-hidden rounded-3xl bg-pine-900 text-cream">
+              <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_100%_0%,rgba(47,106,82,0.6),transparent_70%),radial-gradient(40%_60%_at_0%_100%,rgba(227,168,87,0.14),transparent_70%)]" />
+              <div className="flex max-w-3xl flex-col p-8 sm:p-12">
                 <span className="w-fit rounded-full bg-amber px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-pine-950">
-                  Specjalność gabinetu
+                  Najczęściej wybierany
                 </span>
                 <h3 className="mt-5 font-display text-3xl leading-tight sm:text-4xl">{featured.title}</h3>
                 <p className="mt-3 text-lg font-medium text-pine-300">{featured.lead}</p>
@@ -318,7 +299,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-8 flex flex-wrap items-center gap-5">
                   <a href="#kontakt" className={btnPrimary}>
-                    Umów akupunkturę
+                    Umów masaż
                   </a>
                   <ServiceMeta s={featured} dark />
                 </div>
@@ -332,7 +313,7 @@ export default function Home() {
             </div>
 
             <p className="reveal mt-8 max-w-3xl rounded-2xl border border-sand bg-cream px-6 py-4 text-sm text-muted text-pretty">
-              Masaże w ofercie mają charakter relaksacyjny i wellness. Nie są zabiegami leczniczymi. Akupunktura jest metodą medycyny tradycyjnej i komplementarnej i nie zastępuje leczenia ani porady lekarza.
+              {disclaimer}
             </p>
           </div>
         </section>
@@ -367,7 +348,7 @@ export default function Home() {
               <div className="overflow-hidden rounded-[2rem]">
                 <Image
                   src={mobilizacja}
-                  alt={`${site.name} wykonuje mobilizację biodra pacjenta leżącego na stole terapeutycznym`}
+                  alt={`${site.name} pracuje z klientem leżącym na stole do masażu`}
                   placeholder="blur"
                   sizes="(min-width: 1024px) 540px, 92vw"
                   className="aspect-[4/3] w-full object-cover"
@@ -381,7 +362,7 @@ export default function Home() {
                 Cześć, jestem {site.name}
               </h2>
               <p className="mt-5 text-lg text-muted text-pretty">
-                Jestem fizjoterapeutą. Łączę akupunkturę z masażem i pracą nad ruchem, bo ból rzadko ma jedną przyczynę. Zależy mi na tym, żebyś rozumiał swoje ciało i wiedział, co możesz dla niego zrobić także poza gabinetem.
+                Zajmuję się masażem klasycznym i relaksacyjnym. Zależy mi na tym, żebyś na stole naprawdę odpoczął, a z gabinetu wyszedł rozluźniony i w lepszym nastroju.
               </p>
               <ul className="mt-8 grid gap-4">
                 {principles.map((p) => (
@@ -394,7 +375,7 @@ export default function Home() {
                 ))}
               </ul>
               <a href="#kontakt" className="group mt-10 inline-flex min-h-13 items-center gap-2 rounded-full bg-pine-900 px-7 font-semibold text-cream transition hover:bg-pine-800">
-                Umów pierwszą wizytę <Arrow />
+                Umów pierwszy masaż <Arrow />
               </a>
             </div>
           </div>
@@ -461,7 +442,7 @@ export default function Home() {
                 Zrób pierwszy krok. Resztą zajmiemy się razem.
               </h2>
               <p className="mt-5 max-w-lg text-lg text-cream/75 text-pretty">
-                Najszybciej umówisz się telefonicznie. Jeśli nie odbieram, jestem w trakcie zabiegu i oddzwonię.
+                Najszybciej umówisz się telefonicznie. Jeśli nie odbieram, jestem w trakcie masażu i oddzwonię.
               </p>
               <a href={telHref} className="mt-8 inline-flex items-center gap-4 font-display text-3xl text-cream transition hover:text-amber sm:text-4xl">
                 <span className="grid size-14 place-items-center rounded-full bg-amber text-pine-950">
@@ -519,11 +500,18 @@ export default function Home() {
 
       {/* ───────── Stopka ───────── */}
       <footer className="border-t border-white/10 bg-pine-950 pb-28 pt-10 text-sm text-cream/60 lg:pb-10">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <p className="mb-6 border-b border-white/10 pb-6 text-cream/70">{disclaimer}</p>
+        </div>
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>
-            © {site.year} {site.brand}
+            © {site.year} {site.legalName || site.brand}
+            {site.nip && ` · NIP ${site.nip}`}
           </p>
           <div className="flex flex-wrap gap-6">
+            <Link href="/polityka-prywatnosci" className="hover:text-cream">
+              Polityka prywatności
+            </Link>
             {site.instagram && (
               <a href={site.instagram} className="hover:text-cream">
                 Instagram

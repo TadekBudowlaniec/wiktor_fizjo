@@ -16,9 +16,9 @@ const body = Manrope({
 });
 
 const where = site.city ? ` ${site.city}` : "";
-const title = `Fizjoterapeuta${where} | Akupunktura i masaż | ${site.name}`;
+const title = `Masaż${where} | Masaż klasyczny i relaksacyjny | ${site.name}`;
 const description =
-  "Akupunktura, masaż przeciwbólowy, masaż poprawiający mobilność, relaksacyjny i tradycyjny. Terapia dobrana do Twojego ciała. Umów wizytę.";
+  "Masaż klasyczny relaksacyjny, masaż rozluźniający napięte mięśnie oraz relaksacyjny masaż pleców, rąk, nóg, brzucha i klatki piersiowej. Wizyta 1 na 1. Umów masaż.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

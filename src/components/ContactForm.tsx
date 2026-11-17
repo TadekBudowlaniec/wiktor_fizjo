@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 const field =
@@ -21,9 +22,11 @@ export function ContactForm({
     const body = [
       `Imię: ${d.get("imie")}`,
       `Telefon: ${d.get("telefon")}`,
-      `Zabieg: ${d.get("usluga")}`,
+      `Masaż: ${d.get("usluga")}`,
       "",
       `${d.get("wiadomosc") ?? ""}`,
+      "",
+      "Zgoda na przetwarzanie danych zgodnie z polityką prywatności: tak",
     ].join("\n");
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
       subject,
@@ -58,26 +61,45 @@ export function ContactForm({
         </label>
       </div>
       <label className="grid gap-1.5 text-sm font-medium text-cream/80">
-        Zabieg
+        Masaż
         <select
           name="usluga"
-          defaultValue="Nie wiem, proszę o poradę"
+          defaultValue="Jeszcze nie wiem"
           className={`${field} [&>option]:text-ink`}
         >
-          <option>Nie wiem, proszę o poradę</option>
+          <option>Jeszcze nie wiem</option>
           {services.map((s) => (
             <option key={s}>{s}</option>
           ))}
         </select>
       </label>
       <label className="grid gap-1.5 text-sm font-medium text-cream/80">
-        Co Ci dolega?
+        Wiadomość
         <textarea
           name="wiadomosc"
           rows={3}
-          placeholder="Kilka słów o problemie i pasujące terminy (opcjonalnie)"
+          placeholder="Preferowany termin lub pytanie (opcjonalnie)"
           className={field}
         />
+      </label>
+      <label className="flex items-start gap-3 text-sm text-cream/75">
+        <input
+          type="checkbox"
+          name="zgoda"
+          required
+          className="mt-0.5 size-5 shrink-0 accent-amber"
+        />
+        <span>
+          Wyrażam zgodę na przetwarzanie moich danych w celu odpowiedzi na
+          zapytanie i umówienia wizyty. Szczegóły w{" "}
+          <Link
+            href="/polityka-prywatnosci"
+            className="font-semibold text-cream underline underline-offset-4"
+          >
+            polityce prywatności
+          </Link>
+          .
+        </span>
       </label>
       <button
         type="submit"
